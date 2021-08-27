@@ -17,7 +17,7 @@ export const Content = styled.div`
     margin: 0 auto;
     border-radius: 40px;
     color: var(--white);
-
+    align-items: center;
 
     img {
         position: absolute;
@@ -29,10 +29,10 @@ export const Content = styled.div`
     input {
         position: absolute;
         left: 0px;
+        height: 55px;
         width: 100%;
-        font-size: 28px;
+        font-size: var(--fontBig);
         border-radius: 40px;
-        margin: 8px 0;
         padding-left: 60px;
         border: none;
         background: transparent;
