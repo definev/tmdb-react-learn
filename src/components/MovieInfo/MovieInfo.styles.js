@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from '../../config';
 
 export const Wrapper = styled.div`
-  background: ${(props) =>
-    props.backdrop
-      ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${props.backdrop}')`
+  background: ${({ backdrop }) =>
+    backdrop
+      ? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop}')`
       : '#000'};
   background-size: cover;
   background-position: center;
@@ -23,24 +23,46 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  max-width: 1280px;
-
+  max-width: var(--maxWidth);
   margin: 0 auto;
-  background: rgb(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: block;
     max-height: none;
+    align-items: center;
+    justify-items: center;
+
+    .Thumb {
+      width: 100%;
+      display: flex;
+      padding: 40px 40px 0 40px;
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 780px) {
+    display: block;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    .Thumb {
+      width: 100%;
+      display: flex;
+      padding: 0;
+      justify-content: center;
+    }
   }
 `;
 
 export const Text = styled.div`
+  overflow: hidden;
   width: 100%;
   padding: 20px 40px;
   color: var(--white);
-  overflow: hidden;
-
+  
   .rating-director {
     display: flex;
     justify-content: flex-start;
@@ -50,17 +72,19 @@ export const Text = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
     height: 35px;
+    width: 35px;
     background: #fff;
     color: #000;
-    font-weight: 800;
-    border-radius: 25px;
-    margin: 0px 0 0 0;
+    margin: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: var(--fontMed);
   }
 
   .director {
-    margin: 0 0 0 40px;
+    display: block;
+    margin-left: 40px;
 
     p {
       margin: 0;
@@ -68,7 +92,7 @@ export const Text = styled.div`
   }
 
   h1 {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
       font-size: var(--fontBig);
     }
   }

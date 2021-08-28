@@ -3,40 +3,37 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  min-height: 100px;
   background: var(--darkGrey);
-  padding: 0 20px;
+  margin: 0 auto;
+  min-height: 100px;
+  padding: 0px 20px;
 `;
 
 export const Content = styled.div`
   display: flex;
-  max-width: var(--maxWidth);
+  justify-content: space-evenly;
   width: 100%;
   margin: 0 auto;
+  max-width: var(--maxWidth);
 
-  .column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--medGrey);
-    border-radius: 20px;
-    margin: 0 20px;
-    flex: 1;
+  @media screen and (max-width: 1000px) {
+    display: block;
+    .column {
+      display: flex;
+      background: var(--medGrey);
+      height: 50px;
+      justify-content: center;
+      margin: 15px 0;
 
-    :first-child {
-      margin-left: 0;
-    }
-
-    :last-child {
-      margin-right: 0;
+      p {
+        justify-self: center;
+      }
     }
   }
 
-  @media screen and (max-width: 768px) {
-    display: block;
-
-    .column {
-      margin: 20px 0;
-    }
+  .column {
+    background: var(--medGrey);
+    padding: 0 30px;
+    border-radius: 20px;
   }
 `;

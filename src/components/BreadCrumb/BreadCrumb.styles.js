@@ -27,7 +27,7 @@ export const Content = styled.div`
     color: var(--white);
     padding-right: 10px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
       font-size: 16px;
     }
   }
@@ -42,7 +42,7 @@ export const Content = styled.div`
     color: var(--white);
     padding-right: 10px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
       font-size: 16px;
     }
   } */
